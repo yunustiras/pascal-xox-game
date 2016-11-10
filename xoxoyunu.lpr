@@ -7,789 +7,268 @@ a:Array[1..3,1..3] of string;
 button:char;
 cevap,p,t,e,r,h:string;
 begin
-
-
   repeat
-
-
   randomize;
-
-
+  
   for x:=1 to 3 do begin
-
-
     for y:=1 to 3 do begin
-
-
       a[x,y]:='.';
-
-
     end;
-
-
   end;
-
-
   k:=0;
-
-
   repeat
-
-
   clrscr;
-
-
-  writeln('123456789 tuslariyla oynanir');
-
-
+ writeln('123456789 tuslariyla oynanir');
   writeln;
-
-
   write('Ilk baslamak icin 1, Ikinci olarak baslamak icin 2 yaziniz: ');
-
-
-  readln(p);
-
-
-  writeln;
-
-
+ readln(p);
+ writeln;
   write('X olmak icin 1, O olmak icin 2 yaziniz: ');
-
-
-  readln(t);
-
-
+ readln(t);
   writeln;
-
-
   write('Zorluk seviyesi seciniz(1/2): ');
-
-
-  readln(h);
-
-
+ readln(h);
   until (p='1') and (t='1') and (h='1') or (p='1') and (t='1') and (h='2') or (p='1') and (t='2') and (h='1') or (p='1') and (t='2') and (h='2') or (p='2') and (t='1') and (h='1') or (p='2') and (t='1') and (h='2') or (p='2') and (t='2') and(h='1') or (p='2') and (t='2') and(h='2');
-
-
   if t='1' then begin
-
-
   e:='X';
-
-
   r:='O';
-
-
   end
-
-
   else begin
-
-
   e:='O';
-
-
   r:='X';
-
-
   end;
-
-
   if p='1' then begin
-
-
   goto hata
-
-
   end;
-
-
   while k=0 do begin
-
-
     z:=0;
-
-
   if h='1' then begin
-
-
   if (a[1,1]=r) and (a[1,2]=r) and (a[1,3]='.') then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[1,2]='.') and (a[1,3]=r) then begin
-
-
   a[1,2]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[1,2]=r) and (a[1,3]=r) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,1]=r) and (a[3,1]='.') then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,1]='.') and (a[3,1]=r) then begin
-
-
   a[2,1]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[2,1]=r) and (a[3,1]=r) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[3,2]=r) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[3,2]='.') and (a[3,3]=r) then begin
-
-
   a[3,2]:=r;
-
-
   end
-
-
   else if (a[3,1]='.') and (a[3,2]=r) and (a[3,3]=r) then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[1,3]=r) and (a[2,3]=r) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[1,3]=r) and (a[2,3]='.') and (a[3,3]=r) then begin
-
-
   a[2,3]:=r;
-
-
   end
-
-
   else if (a[1,3]='.') and (a[2,3]=r) and (a[3,3]=r) then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,2]=r) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,2]='.') and (a[3,3]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[2,2]=r) and (a[3,3]=r) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[2,2]=r) and (a[1,3]='.') then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[2,2]='.') and (a[1,3]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[3,1]='.') and (a[2,2]=r) and (a[1,3]=r) then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[2,1]=r) and (a[2,2]=r) and (a[2,3]='.') then begin
-
-
   a[2,3]:=r;
-
-
   end
-
-
   else if (a[2,1]=r) and (a[2,2]='.') and (a[2,3]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[2,1]='.') and (a[2,2]=r) and (a[2,3]=r) then begin
-
-
   a[2,1]:=r;
-
-
   end
-
-
   else if (a[1,2]=r) and (a[2,2]=r) and (a[3,2]='.') then begin
-
-
   a[3,2]:=r;
-
-
   end
-
-
   else if (a[1,2]=r) and (a[2,2]='.') and (a[3,2]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[1,2]='.') and (a[2,2]=r) and (a[3,2]=r) then begin
-
-
   a[1,2]:=r;
-
-
   end
-
-
   else begin
-
-
   repeat
-
-
    l:=random(3)+1;
-
-
    m:=random(3)+1
-
-
   until a[l,m]='.';
-
-
   a[l,m]:=r;
-
-
   end;
-
-
   end
-
-
   else if h='2' then begin
-
-
   if (a[1,1]=r) and (a[1,2]=r) and (a[1,3]='.') then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[1,2]='.') and (a[1,3]=r) then begin
-
-
   a[1,2]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[1,2]=r) and (a[1,3]=r) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,1]=r) and (a[3,1]='.') then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,1]='.') and (a[3,1]=r) then begin
-
-
   a[2,1]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[2,1]=r) and (a[3,1]=r) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[3,2]=r) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[3,2]='.') and (a[3,3]=r) then begin
-
-
   a[3,2]:=r;
-
-
   end
-
-
   else if (a[3,1]='.') and (a[3,2]=r) and (a[3,3]=r) then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[1,3]=r) and (a[2,3]=r) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[1,3]=r) and (a[2,3]='.') and (a[3,3]=r) then begin
-
-
   a[2,3]:=r;
-
   end
-
-
   else if (a[1,3]='.') and (a[2,3]=r) and (a[3,3]=r) then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,2]=r) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=r) and (a[2,2]='.') and (a[3,3]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[2,2]=r) and (a[3,3]=r) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[2,2]=r) and (a[1,3]='.') then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[3,1]=r) and (a[2,2]='.') and (a[1,3]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[3,1]='.') and (a[2,2]=r) and (a[1,3]=r) then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[2,1]=r) and (a[2,2]=r) and (a[2,3]='.') then begin
-
-
   a[2,3]:=r;
-
-
   end
-
-
   else if (a[2,1]=r) and (a[2,2]='.') and (a[2,3]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[2,1]='.') and (a[2,2]=r) and (a[2,3]=r) then begin
-
-
   a[2,1]:=r;
-
-
   end
-
-
   else if (a[1,2]=r) and (a[2,2]=r) and (a[3,2]='.') then begin
-
-
   a[3,2]:=r;
-
-
   end
-
-
   else if (a[1,2]=r) and (a[2,2]='.') and (a[3,2]=r) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[1,2]='.') and (a[2,2]=r) and (a[3,2]=r) then begin
-
-
   a[1,2]:=r;
-
-
   end
-
-
   else if (a[1,1]=e) and (a[1,2]=e) and (a[1,3]='.') then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=e) and (a[1,2]='.') and (a[1,3]=e) then begin
-
-
   a[1,2]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[1,2]=e) and (a[1,3]=e) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[1,1]=e) and (a[2,1]=e) and (a[3,1]='.') then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[1,1]=e) and (a[2,1]='.') and (a[3,1]=e) then begin
-
-
   a[2,1]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[2,1]=e) and (a[3,1]=e) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
-
   else if (a[3,1]=e) and (a[3,2]=e) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[3,1]=e) and (a[3,2]='.') and (a[3,3]=e) then begin
-
-
   a[3,2]:=r;
-
-
   end
-
-
   else if (a[3,1]='.') and (a[3,2]=e) and (a[3,3]=e) then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[1,3]=e) and (a[2,3]=e) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[1,3]=e) and (a[2,3]='.') and (a[3,3]=e) then begin
-
-
   a[2,3]:=r;
-
-
   end
-
-
   else if (a[1,3]='.') and (a[2,3]=e) and (a[3,3]=e) then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=e) and (a[2,2]=e) and (a[3,3]='.') then begin
-
-
   a[3,3]:=r;
-
-
   end
-
-
   else if (a[1,1]=e) and (a[2,2]='.') and (a[3,3]=e) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[1,1]='.') and (a[2,2]=e) and (a[3,3]=e) then begin
-
-
   a[1,1]:=r;
-
-
   end
-
   else if (a[3,1]=e) and (a[2,2]=e) and (a[1,3]='.') then begin
-
-
   a[1,3]:=r;
-
-
   end
-
-
   else if (a[3,1]=e) and (a[2,2]='.') and (a[1,3]=e) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[3,1]='.') and (a[2,2]=e) and (a[1,3]=e) then begin
-
-
   a[3,1]:=r;
-
-
   end
-
-
   else if (a[2,1]=e) and (a[2,2]=e) and (a[2,3]='.') then begin
-
-
   a[2,3]:=r;
-
-
   end
-
-
   else if (a[2,1]=e) and (a[2,2]='.') and (a[2,3]=e) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[2,1]='.') and (a[2,2]=e) and (a[2,3]=e) then begin
-
-
   a[2,1]:=r;
-
-
   end
-
-
   else if (a[1,2]=e) and (a[2,2]=e) and (a[3,2]='.') then begin
-
-
   a[3,2]:=r;
-
-
   end
-
-
   else if (a[1,2]=e) and (a[2,2]='.') and (a[3,2]=e) then begin
-
-
   a[2,2]:=r;
-
-
   end
-
-
   else if (a[1,2]='.') and (a[2,2]=e) and (a[3,2]=e) then begin
-
-
   a[1,2]:=r;
-
-
   end
-
-
   else begin
-
-
   repeat
 
 
