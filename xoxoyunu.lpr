@@ -270,118 +270,41 @@ begin
   end
   else begin
   repeat
-
-
    l:=random(3)+1;
-
-
    m:=random(3)+1
-
-
   until a[l,m]='.';
-
-
   a[l,m]:=r;
-
-
   end;
-
-
   end;
-
-
   clrscr;
-
-
      for x:=1 to 3 do begin
-
-
      writeln;
-
-
      writeln;
-
-
      for y:=1 to 3 do begin
-
-
      write(a[y,x],'  ');
-
-
      end;
-
-
      end;
-
-
   if (a[1,1]=r) and (a[1,2]=r) and (a[1,3]=r) or (a[1,1]=r) and (a[2,1]=r) and
-
-
      (a[3,1]=r) or (a[3,1]=r) and (a[3,2]=r) and (a[3,3]=r) or (a[1,3]=r) and
-
-
      (a[2,3]=r) and (a[3,3]=r) or (a[1,1]=r) and (a[2,2]=r) and (a[3,3]=r) or
-
-
      (a[3,1]=r) and (a[2,2]=r) and (a[1,3]=r) or (a[2,1]=r) and (a[2,2]=r) and
-
-
      (a[2,3]=r) or (a[1,2]=r) and (a[2,2]=r) and (a[3,2]=r) then begin
-
-
        k:=1;
-
-
        end;
-
-
-
-
-
   if k=0 then begin
-
-
   for x:=1 to 3 do begin
-
-
    for y:=1 to 3 do begin
-
-
     if a[x,y]<>'.' then begin
-
-
     z:=z+1;
-
-
    end;
-
-
    end;
-
-
    end;
-
-
   end;
-
-
   if z=9 then begin
-
-
     k:=3;
-
-
   end;
-
-
-
-
   z:=0;
-
-
   if k=0 then begin
-
-
      hata:
      clrscr;
      for x:=1 to 3 do begin
@@ -389,7 +312,6 @@ begin
      writeln;
      for y:=1 to 3 do begin
      write(a[y,x],'  ');
-
      end;
      end;
      repeat
@@ -404,45 +326,19 @@ begin
      goto hata
      end;
      end;
-
-
      '2':begin
-
-
      if a[2,3]='.' then begin
-
-
         a[2,3]:=e;
-
-
      end
-
-
      else begin
-
-
      goto hata
-
-
      end;
-
-
      end;
      '3':begin
-
-
      if a[3,3]='.' then begin
-
-
        a[3,3]:=e;
-
-
      end
-
-
      else begin
-
-
      goto hata
      end;
      end;
@@ -469,225 +365,69 @@ begin
      else begin
      goto hata
      end;
-
-
      end;
-
-
      '7':begin
-
-
      if a[1,1]='.' then begin
-
-
         a[1,1]:=e;
-
-
      end
-
-
      else begin
-
-
      goto hata
-
-
      end;
-
-
      end;
-
-
      '8':begin
-
-
      if a[2,1]='.' then begin
-
-
         a[2,1]:=e;
-
-
      end
-
-
      else begin
-
-
      goto hata
-
-
      end;
-
-
      end;
-
-
      '9':begin
-
-
      if a[3,1]='.' then begin
-
-
         a[3,1]:=e;
-
-
      end
-
-
      else begin
-
-
      goto hata
-
-
      end;
-
-
      end;
-
-
   end;
-
-
      clrscr;
-
-
      for x:=1 to 3 do begin
-
-
      writeln;
-
-
      writeln;
-
-
-     for y:=1 to 3 do begin
-
-
+     for y:=1 to 3 do begin 
      write(a[y,x],'  ');
-
-
      end;
-
-
      end;
-
-
-     if (a[1,1]=e) and (a[1,2]=e) and (a[1,3]=e) or (a[1,1]=e) and (a[2,1]=e) and
-
-
-     (a[3,1]=e) or (a[3,1]=e) and (a[3,2]=e) and (a[3,3]=e) or (a[1,3]=e) and
-
-
-     (a[2,3]=e) and (a[3,3]=e) or (a[1,1]=e) and (a[2,2]=e) and (a[3,3]=e) or
-
-
-     (a[3,1]=e) and (a[2,2]=e) and (a[1,3]=e) or (a[2,1]=e) and (a[2,2]=e) and
-
-
+     if (a[1,1]=e) and (a[1,2]=e) and (a[1,3]=e) or (a[1,1]=e) and (a[2,1]=e) and (a[3,1]=e) or (a[3,1]=e) and (a[3,2]=e) and (a[3,3]=e) or (a[1,3]=e) and
+     (a[2,3]=e) and (a[3,3]=e) or (a[1,1]=e) and (a[2,2]=e) and (a[3,3]=e) or (a[3,1]=e) and (a[2,2]=e) and (a[1,3]=e) or (a[2,1]=e) and (a[2,2]=e) and
      (a[2,3]=e) or (a[1,2]=e) and (a[2,2]=e) and (a[3,2]=e) then begin
-
-
        k:=2;
-
-
        end;
-
-
        end;
-
-
   if k=0 then begin
-
-
   for x:=1 to 3 do begin
-
-
    for y:=1 to 3 do begin
-
-
     if a[x,y]<>'.' then begin
-
-
     z:=z+1;
-
-
    end;
-
-
    end;
-
-
    end;
-
-
   end;
-
-
-  if z=9 then begin
-
-
-    k:=3;
-
-
+  if z=9 then begin    k:=3;
   end;
-
-
-
-
-
   end;
-
-
   writeln;
-
-
   writeln;
-
-
-  if k=1 then begin
-
-
-    writeln('Siz kaybettiniz');
-
-
+  if k=1 then begin    writeln('Siz kaybettiniz');
   end
-
-
-  else if k=2 then begin
-
-
-    writeln('Siz kazandiniz');
-
-
+  else if k=2 then begin    writeln('Siz kazandiniz');
   end
-
-
-  else if k=3 then begin
-
-
-    writeln('Berabere');
-
-
+  else if k=3 then begin    writeln('Berabere');
   end;
-
-
   repeat
-
-
    write('Bir daha oynamak ister misiniz?(Y/N): ');
-
-
    readln(cevap);
-
-
   until (cevap='y') or (cevap='Y') or (cevap='n') or (cevap='N');
-
-
   until (cevap='n') or (cevap='N');
-
-
 end.
-
-
-
